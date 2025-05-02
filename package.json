@@ -1,0 +1,28 @@
+{
+  "name": "@thebigrick/catalyst-algolia-search",
+  "version": "0.2.0",
+  "description": "Algolia layer for Catalyst",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx,.js,.cjs --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "lint-fix": "eslint . --ext .ts,.js,.cjs --fix"
+  },
+  "author": "Riccardo Tempesta <riccardo.tempesta@bigcommerce.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@bigcommerce/catalyst-core": "workspace:*",
+    "@thebigrick/catalyst-pluginizr": "workspace:*",
+    "@thebigrick/catalyst-search-layer": "workspace:*",
+    "algoliasearch": "^5.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "eslint": "^8.7.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
