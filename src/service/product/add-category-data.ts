@@ -10,7 +10,7 @@ export const addCategoryData = (hit: AlgoliaHit, product: SearchProductNode): vo
       edges: hit.categories.lvl0.map((cat) => ({
         node: {
           name: cat,
-          path: `/categories/${cat.toLowerCase().replace(/ /g, '-')}`,
+          path: `/${cat.toLowerCase().replace(/ /g, '-')}`,
         },
       })),
     };

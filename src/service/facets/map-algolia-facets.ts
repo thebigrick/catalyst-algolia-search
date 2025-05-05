@@ -1,10 +1,9 @@
-import { SearchFilters, SearchFilter } from '@thebigrick/catalyst-search-layer/types';
+import { SearchFilter, SearchFilters } from '@thebigrick/catalyst-search-layer/types';
 import { createEmptyPageInfo } from './create-empty-page-info';
 import { mapBrandFacets } from './map-brand-facets';
 import { mapCategoryFacets } from './map-category-facets';
 import { mapPriceFacets } from './map-price-facets';
 import { mapProductAttributes } from './map-product-attributes';
-import { addOtherFilters } from './add-other-filters';
 import { mapRatingFacets } from './map-rating-facets';
 
 /**
@@ -22,7 +21,6 @@ export const mapAlgoliaFacets = (
   mapCategoryFacets(facets, filters, emptyPageInfo, result);
   mapPriceFacets(facetStats, filters, result);
   mapProductAttributes(facets, filters, result);
-  addOtherFilters(filters, result);
   mapRatingFacets(facets, filters, emptyPageInfo, result);
 
   return result;

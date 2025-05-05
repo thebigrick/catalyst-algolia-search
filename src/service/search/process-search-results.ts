@@ -5,6 +5,7 @@ import {
 } from '@thebigrick/catalyst-search-layer/types';
 import { mapAlgoliaHit } from '../product/map-algolia-hit';
 import { mapAlgoliaFacets } from '../facets/map-algolia-facets';
+import filterHiddenFacets from '../facets/filter-hidden-facets';
 
 /**
  * Processes Algolia search response and maps it to Catalyst format
@@ -48,7 +49,7 @@ export const processSearchResults = (
     totalItems: nbHits,
   };
 
-  const searchFilters = mapAlgoliaFacets(facets, facetStats, filters);
+  const searchFilters = mapAlgoliaFacets(filterHiddenFacets(facets), facetStats, filters);
 
   return {
     products,
